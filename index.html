@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shree Gyan Jyoti Secondary School</title>
+  <title data-i18n="title">Shree Gyan Jyoti Secondary School</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -11,37 +11,36 @@
       background-color: #f4f4f4;
       line-height: 1.6;
     }
-
     header, footer {
       background-color: #004080;
       color: white;
       padding: 1rem 0;
       text-align: center;
     }
-
     nav {
       background-color: #003366;
       padding: 0.5rem 0;
       text-align: center;
     }
-
     nav a {
       color: white;
       margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
     }
-
     nav a:hover {
       text-decoration: underline;
     }
-
+    .lang-select {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
     main {
       max-width: 1000px;
       margin: 1rem auto;
       padding: 0 1rem;
     }
-
     section {
       background-color: white;
       margin-bottom: 1.5rem;
@@ -49,20 +48,13 @@
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
-
     h2 {
       color: #004080;
       margin-top: 0;
     }
-
-    ul {
-      padding-left: 1.25rem;
-    }
-
     footer p {
       margin: 0;
     }
-
     .button-link {
       display: inline-block;
       margin-top: 10px;
@@ -72,11 +64,9 @@
       text-decoration: none;
       border-radius: 5px;
     }
-
     .button-link:hover {
       background: #003366;
     }
-
     @media (max-width: 600px) {
       nav a {
         display: block;
@@ -87,9 +77,16 @@
 </head>
 <body>
 
+  <div class="lang-select">
+    <select onchange="setLanguage(this.value)">
+      <option value="en">English</option>
+      <option value="np">नेपाली</option>
+    </select>
+  </div>
+
   <header>
-    <h1>Shree Gyan Jyoti Secondary School</h1>
-    <p>Ajirkot-3, Lapsibot, Gorkha</p>
+    <h1 data-i18n="school-name">Shree Gyan Jyoti Secondary School</h1>
+    <p data-i18n="location">Ajirkot-3, Lapsibot, Gorkha</p>
   </header>
 
   <nav>
@@ -102,26 +99,26 @@
 
   <main>
     <section id="news">
-      <h2>📢 News & Announcements</h2>
-      <ul>
-        <p>We are excited to announce that Summer Break will officially begin on <b>June 22</b> and will continue until <b>July 30.</b></p> 
-        <p>This is the perfect time to relax, recharge, and enjoy some well-deserved rest!</p>
-
-        <p>🎒 Last day of school before break: <b>June 20</b></p>
-         <p>📚 Classes will resume on: <b>July 31</b></p>
-
-          <p>Wishing everyone a safe, joyful, and refreshing summer holiday! 🌴🍉🌈</p>
-      </ul>
-      <a class="button-link" href="announcement.html">View All Announcements</a>
+      <h2 data-i18n="news-title">📢 News & Announcements</h2>
+      <p data-i18n="news-body">
+        We are excited to announce that Summer Break will officially begin on <b>June 22</b> and will continue until <b>July 30</b>.<br>
+        This is the perfect time to relax, recharge, and enjoy some well-deserved rest!<br><br>
+        🎒 Last day of school before break: <b>June 20</b><br>
+        📚 Classes will resume on: <b>July 31</b><br><br>
+        Wishing everyone a safe, joyful, and refreshing summer holiday! 🌴🍉🌈
+      </p>
+      <a class="button-link" href="announcement.html" data-i18n="announcement-btn">View All Announcements</a>
     </section>
 
     <section id="academics">
-      <h2>📚 Academic Programs</h2>
-      <p>We offer classes from Nursery to Grade 12, including Science, Management, and Humanities streams in +2 levels.</p>
+      <h2 data-i18n="academics-title">📚 Academic Programs</h2>
+      <p data-i18n="academics-body">
+        We offer classes from Nursery to Grade 12, including Science, Management, and Humanities streams in +2 levels.
+      </p>
     </section>
 
     <section id="faculty">
-      <h2>👩‍🏫 Faculty Members</h2>
+      <h2 data-i18n="faculty-title">👩‍🏫 Faculty Members</h2>
       <ul>
         <li><strong>Principal:</strong> Bishnu Datta Adhikari</li>
         <li><strong>Vice Principal:</strong> Indra Bahadur Gurung</li>
@@ -150,26 +147,27 @@
     </section>
 
     <section id="achievements">
-      <h2>🏆 Achievements</h2>
-      <ul>
-        <li>Rular Municipality Topper in SEE 2080</li>
+      <h2 data-i18n="achievements-title">🏆 Achievements</h2>
+      <ul data-i18n="achievements-list">
+        <li>Rural Municipality Topper in SEE 2080</li>
         <li>First place in Inter-school Science Exhibition 2079</li>
         <li>Best School Award in Gorkha District - 2078</li>
-        <li>Ratrapati Running Shild - 2080</li>
+        <li>Ratrapati Running Shield - 2080</li>
       </ul>
     </section>
 
     <section id="contact">
-      <h2>📞 Contact Us</h2>
-      <p><strong>Address:</strong> Ajirkot-3, Lapsibot, Gorkha</p>
-      <p><strong>Phone:</strong> +977-9856071623</p>
-      <p><strong>Email:</strong> <a href="mailto:shubhudu2010@gmail.com">shubhudu2010@gmail.com</a></p>
+      <h2 data-i18n="contact-title">📞 Contact Us</h2>
+      <p data-i18n="address"><strong>Address:</strong> Ajirkot-3, Lapsibot, Gorkha</p>
+      <p data-i18n="phone"><strong>Phone:</strong> +977-9856071623</p>
+      <p data-i18n="email"><strong>Email:</strong> <a href="mailto:shubhudu2010@gmail.com">shubhudu2010@gmail.com</a></p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Shree Gyan Jyoti Secondary School. All rights reserved.</p>
+    <p data-i18n="footer">&copy; 2025 Shree Gyan Jyoti Secondary School. All rights reserved.</p>
   </footer>
 
+  <script src="lang.js"></script>
 </body>
 </html>
