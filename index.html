@@ -4,107 +4,125 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shree Gyan Jyoti Secondary School</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
       background-color: #f4f4f4;
+      color: #333;
       line-height: 1.6;
     }
 
     header, footer {
-      background-color: #004080;
+      background: linear-gradient(90deg, #004080, #0059b3);
       color: white;
-      padding: 1rem 0;
       text-align: center;
+      padding: 2rem 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     nav {
       background-color: #003366;
-      padding: 0.5rem 0;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 1rem;
+      gap: 1rem;
     }
 
     nav a {
       color: white;
-      margin: 0 1rem;
+      font-weight: 600;
       text-decoration: none;
-      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background 0.3s;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      background-color: #0059b3;
     }
 
     .lang-select {
       position: absolute;
-      top: 10px;
-      right: 10px;
+      top: 20px;
+      right: 20px;
     }
 
     .lang-select select {
       padding: 5px;
-      border-radius: 4px;
+      border-radius: 5px;
+      border: none;
     }
 
     main {
-      max-width: 1000px;
-      margin: 1rem auto;
-      padding: 0 1rem;
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 1rem;
     }
 
     section {
-      background-color: white;
-      margin-bottom: 1.5rem;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background: white;
+      margin-bottom: 2rem;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
     }
 
     h2 {
       color: #004080;
-      margin-top: 0;
+      margin-bottom: 1rem;
     }
 
     ul {
-      padding-left: 1.25rem;
-    }
-
-    footer p {
-      margin: 0;
+      list-style: inside square;
+      margin-left: 1rem;
     }
 
     .button-link {
       display: inline-block;
-      margin-top: 10px;
-      padding: 8px 16px;
+      margin-top: 1rem;
+      padding: 10px 20px;
       background: #004080;
       color: white;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 6px;
+      transition: background 0.3s;
     }
 
     .button-link:hover {
-      background: #003366;
+      background: #00264d;
     }
 
-    @media (max-width: 600px) {
-      nav a {
-        display: block;
-        margin: 0.5rem 0;
-      }
+    footer p {
+      font-size: 0.9rem;
+    }
 
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
       .lang-select {
         position: static;
+        margin: 1rem auto;
         text-align: center;
-        margin: 0.5rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Language Selector -->
   <div class="lang-select">
     <select onchange="changeLanguage(this)">
       <option value="en" selected>English</option>
@@ -115,11 +133,7 @@
   <script>
     function changeLanguage(select) {
       const lang = select.value;
-      if (lang === "np") {
-        window.location.href = "nepaliindex.html";
-      } else {
-        window.location.href = "index.html";
-      }
+      window.location.href = lang === "np" ? "nepaliindex.html" : "index.html";
     }
   </script>
 
@@ -139,17 +153,15 @@
   <main>
     <section id="news">
       <h2>📢 News & Announcements</h2>
-      <p>We are excited to announce that Summer Break will officially begin on <b>June 22</b> and will continue until <b>July 30</b>.</p> 
-      <p>This is the perfect time to relax, recharge, and enjoy some well-deserved rest!</p>
-      <p>🎒 Last day of school before break: <b>June 20</b></p>
-      <p>📚 Classes will resume on: <b>July 31</b></p>
-      <p>Wishing everyone a safe, joyful, and refreshing summer holiday! 🌴🍉🌈</p>
+      <p>Summer Break: <strong>June 22 - July 30</strong></p>
+      <p>Last day of school: <strong>June 20</strong></p>
+      <p>Classes resume: <strong>July 31</strong></p>
       <a class="button-link" href="announcement.html">View All Announcements</a>
     </section>
 
     <section id="academics">
-      <h2>📚 Academic </h2>
-      <p>We offer classes from Nursery to Grade 12, including Science, Management in +2 levels.</p>
+      <h2>📚 Academics</h2>
+      <p>Classes from Nursery to Grade 12, with +2 in Science and Management streams.</p>
       <a class="button-link" href="academics.html">View Our Academics</a>
     </section>
 
@@ -182,16 +194,16 @@
       </ul>
     </section>
 
-   <section id="achievements">
-  <h2>🏆 Achievements</h2>
-  <ul>
-    <li>Rural Municipality Topper in SEE 2080</li>
-    <li>First place in Inter-school Science Exhibition 2079</li>
-    <li>Best School Award in Gorkha District - 2078</li>
-    <li>Ratrapati Running Shield - 2080</li>
-  </ul>
-  <a class="button-link" href="achivements.html">View All Achievements</a>
-</section>
+    <section id="achievements">
+      <h2>🏆 Achievements</h2>
+      <ul>
+        <li>Rural Municipality Topper in SEE 2080</li>
+        <li>First place in Inter-school Science Exhibition 2079</li>
+        <li>Best School Award in Gorkha District - 2078</li>
+        <li>Ratrapati Running Shield - 2080</li>
+      </ul>
+      <a class="button-link" href="achivements.html">View All Achievements</a>
+    </section>
 
     <section id="contact">
       <h2>📞 Contact Us</h2>
