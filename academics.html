@@ -4,91 +4,110 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Academics | Shree Gyan Jyoti Secondary School</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Nunito', sans-serif;
       margin: 0;
-      background-color: #f4f4f4;
+      background-color: #f9fafc;
       line-height: 1.6;
+      color: #333;
     }
 
     header, footer {
       background-color: #004080;
       color: white;
-      padding: 1rem 0;
+      padding: 1.5rem 0;
       text-align: center;
     }
 
     nav {
       background-color: #003366;
-      padding: 0.5rem 0;
+      padding: 0.75rem 0;
       text-align: center;
     }
 
     nav a {
-      color: white;
-      margin: 0 1rem;
+      color: #ffffff;
+      margin: 0 1.2rem;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: #aad4ff;
     }
 
     main {
-      max-width: 1000px;
-      margin: 1rem auto;
-      padding: 0 1rem;
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
     }
 
     h2 {
       color: #004080;
       text-align: center;
-      margin-bottom: 1rem;
+      font-size: 2rem;
+      margin-bottom: 2rem;
     }
 
     .class-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
     }
 
     .class-card {
       background-color: white;
-      padding: 1.2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.1rem;
       color: #004080;
-      font-weight: bold;
       text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
     }
 
     .class-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      background-color: #eaf3ff;
+      transform: translateY(-4px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      background-color: #eaf4ff;
     }
 
     .back-button {
       display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
+      margin-top: 2.5rem;
+      padding: 10px 22px;
       background-color: #004080;
       color: white;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 6px;
+      font-weight: 700;
+      transition: background-color 0.3s;
     }
 
     .back-button:hover {
-      background-color: #003366;
+      background-color: #002a5c;
     }
 
     footer p {
       margin: 0;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 500px) {
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
     }
   </style>
 </head>
@@ -96,7 +115,7 @@
 
   <header>
     <h1>Shree Gyan Jyoti Secondary School</h1>
-    <p>Academic Classes</p>
+    <p>Academic Levels Overview</p>
   </header>
 
   <nav>
@@ -108,7 +127,7 @@
   </nav>
 
   <main>
-    <h2>📘 Academic Levels (ECD to Class 12)</h2>
+    <h2>📘 Our Academic Programs (ECD to Grade 12)</h2>
     <div class="class-grid">
       <a href="ecd.html" class="class-card">👶 ECD</a>
       <a href="class1.html" class="class-card">📘 Class 1</a>
@@ -125,7 +144,9 @@
       <a href="class12.html" class="class-card">📕 Class 12</a>
     </div>
 
-    <a class="back-button" href="index.html">← Back to Homepage</a>
+    <div style="text-align:center;">
+      <a class="back-button" href="index.html">← Back to Homepage</a>
+    </div>
   </main>
 
   <footer>
