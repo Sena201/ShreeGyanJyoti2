@@ -1,136 +1,235 @@
 <!DOCTYPE html>
-<html lang="ne">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>शैक्षिक स्तर | श्री ज्ञान ज्योति माध्यमिक विद्यालय</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Class 10 Students | Shree Gyan Jyoti Secondary School</title>
   <style>
+    /* Reset and base styles */
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       background-color: #f4f4f4;
-      line-height: 1.6;
+      color: #333;
     }
 
     header, footer {
       background-color: #004080;
       color: white;
-      padding: 1rem 0;
+      padding: 1.5rem 1rem;
       text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
 
     nav {
       background-color: #003366;
-      padding: 0.5rem 0;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
 
     nav a {
       color: white;
-      margin: 0 1rem;
+      padding: 12px 20px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      text-align: center;
+      min-width: 80px;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    nav a:hover,
+    nav a:focus {
+      background-color: #002244;
+      outline: none;
     }
 
     main {
-      max-width: 1000px;
-      margin: 1rem auto;
-      padding: 0 1rem;
+      max-width: 1100px;
+      margin: 2rem auto 3rem auto;
+      padding: 1.5rem 1rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      margin-bottom: 0.25rem;
+      font-weight: 700;
+      font-size: 2.2rem;
+      color: #004080;
     }
 
     h2 {
-      color: #004080;
       text-align: center;
+      color: #004080;
+      font-weight: 600;
       margin-bottom: 1rem;
+      font-size: 1.6rem;
     }
 
-    .class-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1rem;
+      margin-top: 1rem;
     }
 
-    .class-card {
-      background-color: white;
-      padding: 1.2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-      cursor: pointer;
-      color: #004080;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .class-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      background-color: #eaf3ff;
-    }
-
-    .back-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
+    thead th {
       background-color: #004080;
       color: white;
-      text-decoration: none;
-      border-radius: 5px;
+      padding: 12px 8px;
+      font-weight: 700;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
-    .back-button:hover {
-      background-color: #003366;
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tbody tr:hover {
+      background-color: #eaf3ff;
+      cursor: default;
+    }
+
+    tbody td {
+      border: 1px solid #ddd;
+      padding: 10px 8px;
+      text-align: center;
+      vertical-align: middle;
+      color: #004080;
+      font-weight: 600;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        justify-content: center;
+      }
+
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block;
+      }
+
+      thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+
+      tbody tr {
+        border: 1px solid #ccc;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        padding: 0.75rem;
+        background-color: white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      }
+
+      tbody td {
+        border: none;
+        padding-left: 50%;
+        position: relative;
+        text-align: left;
+        font-weight: 500;
+      }
+
+      tbody td::before {
+        position: absolute;
+        top: 10px;
+        left: 12px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: 700;
+        color: #004080;
+        content: attr(data-label);
+      }
     }
 
     footer p {
       margin: 0;
+      font-size: 0.9rem;
+      font-weight: 500;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>श्री ज्ञान ज्योति माध्यमिक विद्यालय</h1>
-    <p>शैक्षिक कक्षाहरू</p>
-  </header>
+<header>
+  <h1>Class 10 Students</h1>
+  <p>Shree Gyan Jyoti Secondary School</p>
+</header>
 
-  <nav>
-    <a href="index.html">गृहपृष्ठ</a>
-    <a href="announcement.html">समाचार</a>
-    <a href="achievements.html">उपलब्धिहरू</a>
-    <a href="academics.html">शैक्षिक</a>
-    <a href="contact.html">सम्पर्क</a>
-  </nav>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="class10.html" aria-current="page" style="background-color: #002244;">Class 10</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-  <main>
-    <h2>📘 शैक्षिक स्तर (ईसीडी देखि कक्षा १२ सम्म)</h2>
-    <div class="class-grid">
-      <a href="ecd.html" class="class-card">👶 ईसीडी</a>
-      <a href="class1.html" class="class-card">📘 कक्षा १</a>
-      <a href="class2.html" class="class-card">📘 कक्षा २</a>
-      <a href="class3.html" class="class-card">📘 कक्षा ३</a>
-      <a href="class4.html" class="class-card">📘 कक्षा ४</a>
-      <a href="class5.html" class="class-card">📘 कक्षा ५</a>
-      <a href="class6.html" class="class-card">📗 कक्षा ६</a>
-      <a href="class7.html" class="class-card">📗 कक्षा ७</a>
-      <a href="class8.html" class="class-card">📗 कक्षा ८</a>
-      <a href="class9.html" class="class-card">📙 कक्षा ९</a>
-      <a href="class10.html" class="class-card">📙 कक्षा १०</a>
-      <a href="class11.html" class="class-card">📕 कक्षा ११</a>
-      <a href="class12.html" class="class-card">📕 कक्षा १२</a>
-    </div>
+<main>
+  <h2>Student Information - 2081</h2>
+  <table role="table" aria-label="Class 10 Students Information">
+    <thead>
+      <tr>
+        <th scope="col">SN</th>
+        <th scope="col">Name</th>
+        <th scope="col">House</th>
+        <th scope="col">Date of Birth</th>
+        <th scope="col">Optional Subject 1</th>
+        <th scope="col">Optional Subject 2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td data-label="SN">1</td><td data-label="Name">Aayusha Gurung</td><td data-label="House">-</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Economics</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">2</td><td data-label="Name">Angal Bhujel</td><td data-label="House">Blue</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Economics</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">3</td><td data-label="Name">Arshan Bhatta</td><td data-label="House">Yellow</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Optional Maths</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">4</td><td data-label="Name">Abhishek Dhital</td><td data-label="House">Red</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Optional Maths</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">5</td><td data-label="Name">Barsha Nepali</td><td data-label="House">Green</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Economics</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">6</td><td data-label="Name">Bikash Gurung</td><td data-label="House">Blue</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Economics</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">7</td><td data-label="Name">Bishal Gurung</td><td data-label="House">Red</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Optional Maths</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">8</td><td data-label="Name">Dhanlal Tamang</td><td data-label="House">Yellow</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Economics</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">9</td><td data-label="Name">Dipesh Sunar</td><td data-label="House">Green</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Economics</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">10</td><td data-label="Name">Dipesh Tamang</td><td data-label="House">Red</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Economics</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">11</td><td data-label="Name">Diwash Adhikari</td><td data-label="House">Yellow</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Economics</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">12</td><td data-label="Name">Izumi Duwadi</td><td data-label="House">Blue</td><td data-label="Date of Birth">2067/03/29</td><td data-label="Optional Subject 1">Optional Maths</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">13</td><td data-label="Name">Janak Sunar</td><td data-label="House">Green</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Optional Maths</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">14</td><td data-label="Name">Jyotika Sunar</td><td data-label="House">Blue</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Economics</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">15</td><td data-label="Name">Keshang Sherpa</td><td data-label="House">Yellow</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Economics</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">16</td><td data-label="Name">Palden Sherpa</td><td data-label="House">Yellow</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Economics</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">17</td><td data-label="Name">Ram Sunar</td><td data-label="House">Green</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Economics</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">18</td><td data-label="Name">Rashmi</td><td data-label="House">-</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Economics</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">19</td><td data-label="Name">Rina Sapkota</td><td data-label="House">Yellow</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Economics</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">20</td><td data-label="Name">Sajina Tamang</td><td data-label="House">Yellow</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Economics</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">21</td><td data-label="Name">Samjhana Tamang</td><td data-label="House">-</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Economics</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">22</td><td data-label="Name">Sarthak Adhikari</td><td data-label="House">Red</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Optional Maths</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">23</td><td data-label="Name">Sijan Sunar</td><td data-label="House">Green</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Economics</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">24</td><td data-label="Name">Sudrishti Dhital</td><td data-label="House">Red</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Optional Maths</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">25</td><td data-label="Name">Sundar Sunar</td><td data-label="House">Blue</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Economics</td><td data-label="Optional Subject 2">Education</td></tr>
+      <tr><td data-label="SN">26</td><td data-label="Name">Usha Gurung</td><td data-label="House">Blue</td><td data-label="Date of Birth">-</td><td data-label="Optional Subject 1">Optional Maths</td><td data-label="Optional Subject 2">Education</td></tr>
+    </tbody>
+  </table>
+</main>
 
-    <a class="back-button" href="index.html">← गृहपृष्ठमा फर्कनुहोस्</a>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 श्री ज्ञान ज्योति माध्यमिक विद्यालय। सम्पूर्ण अधिकार सुरक्षित।</p>
-  </footer>
+<footer>
+  <p>&copy; 2025 Shree Gyan Jyoti Secondary School. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
