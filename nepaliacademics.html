@@ -2,7 +2,7 @@
 <html lang="ne">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>शैक्षिक स्तर | श्री ज्ञान ज्योति माध्यमिक विद्यालय</title>
   <style>
     body {
@@ -10,7 +10,6 @@
       margin: 0;
       background-color: #f4f4f4;
       line-height: 1.6;
-      color: #004080;
     }
 
     header, footer {
@@ -31,7 +30,6 @@
       margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1rem;
     }
 
     nav a:hover {
@@ -47,8 +45,7 @@
     h2 {
       color: #004080;
       text-align: center;
-      margin-bottom: 1.5rem;
-      font-size: 2rem;
+      margin-bottom: 1rem;
     }
 
     .class-grid {
@@ -63,19 +60,17 @@
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
       cursor: pointer;
       color: #004080;
       font-weight: bold;
-      font-size: 1.1rem;
       text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
     }
 
     .class-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       background-color: #eaf3ff;
-      text-decoration: none;
     }
 
     .back-button {
@@ -86,8 +81,6 @@
       color: white;
       text-decoration: none;
       border-radius: 5px;
-      font-weight: bold;
-      transition: background-color 0.3s;
     }
 
     .back-button:hover {
@@ -96,14 +89,6 @@
 
     footer p {
       margin: 0;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 500px) {
-      nav a {
-        display: block;
-        margin: 0.5rem 0;
-      }
     }
   </style>
 </head>
@@ -111,39 +96,40 @@
 
   <header>
     <h1>श्री ज्ञान ज्योति माध्यमिक विद्यालय</h1>
-    <p>नेपाली माध्यम शैक्षिक स्तर</p>
+    <p>शैक्षिक कक्षाहरू</p>
   </header>
 
   <nav>
     <a href="index.html">गृहपृष्ठ</a>
     <a href="announcement.html">समाचार</a>
     <a href="achievements.html">उपलब्धिहरू</a>
-    <a href="academics.html">अंग्रेजी माध्यम</a>
-    <a href="nepaliacademics.html">नेपाली माध्यम</a>
+    <a href="academics.html">शैक्षिक</a>
     <a href="contact.html">सम्पर्क</a>
   </nav>
 
   <main>
-    <h2>📘 नेपाली माध्यम कक्षा (ECD देखि कक्षा १० सम्म)</h2>
+    <h2>📘 शैक्षिक स्तर (ईसीडी देखि कक्षा १२ सम्म)</h2>
     <div class="class-grid">
-      <a href="nepali-ecd.html" class="class-card">👶 ई.सी.डी</a>
-      <a href="nepali-class1.html" class="class-card">📘 कक्षा १</a>
-      <a href="nepali-class2.html" class="class-card">📘 कक्षा २</a>
-      <a href="nepali-class3.html" class="class-card">📘 कक्षा ३</a>
-      <a href="nepali-class4.html" class="class-card">📘 कक्षा ४</a>
-      <a href="nepali-class5.html" class="class-card">📘 कक्षा ५</a>
-      <a href="nepali-class6.html" class="class-card">📗 कक्षा ६</a>
-      <a href="nepali-class7.html" class="class-card">📗 कक्षा ७</a>
-      <a href="nepali-class8.html" class="class-card">📗 कक्षा ८</a>
-      <a href="nepali-class9.html" class="class-card">📙 कक्षा ९</a>
-      <a href="nepali-class10.html" class="class-card">📙 कक्षा १०</a>
+      <a href="ecd.html" class="class-card">👶 ईसीडी</a>
+      <a href="class1.html" class="class-card">📘 कक्षा १</a>
+      <a href="class2.html" class="class-card">📘 कक्षा २</a>
+      <a href="class3.html" class="class-card">📘 कक्षा ३</a>
+      <a href="class4.html" class="class-card">📘 कक्षा ४</a>
+      <a href="class5.html" class="class-card">📘 कक्षा ५</a>
+      <a href="class6.html" class="class-card">📗 कक्षा ६</a>
+      <a href="class7.html" class="class-card">📗 कक्षा ७</a>
+      <a href="class8.html" class="class-card">📗 कक्षा ८</a>
+      <a href="class9.html" class="class-card">📙 कक्षा ९</a>
+      <a href="class10.html" class="class-card">📙 कक्षा १०</a>
+      <a href="class11.html" class="class-card">📕 कक्षा ११</a>
+      <a href="class12.html" class="class-card">📕 कक्षा १२</a>
     </div>
 
-    <a href="index.html" class="back-button">← गृहपृष्ठमा फर्कनुहोस्</a>
+    <a class="back-button" href="index.html">← गृहपृष्ठमा फर्कनुहोस्</a>
   </main>
 
   <footer>
-    <p>&copy; २०२५ श्री ज्ञान ज्योति माध्यमिक विद्यालय। सम्पूर्ण अधिकार सुरक्षित।</p>
+    <p>&copy; 2025 श्री ज्ञान ज्योति माध्यमिक विद्यालय। सम्पूर्ण अधिकार सुरक्षित।</p>
   </footer>
 
 </body>
