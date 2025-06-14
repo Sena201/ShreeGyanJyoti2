@@ -2,105 +2,101 @@
 <html lang="ne">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nepali Academics | Shree Gyan Jyoti Secondary School</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>शैक्षिक स्तर | श्री ज्ञान ज्योति माध्यमिक विद्यालय</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Nunito', sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #f9fafc;
+      background-color: #f4f4f4;
       line-height: 1.6;
-      color: #333;
+      color: #004080;
     }
 
     header, footer {
       background-color: #004080;
       color: white;
-      padding: 1.5rem 0;
+      padding: 1rem 0;
       text-align: center;
     }
 
     nav {
       background-color: #003366;
-      padding: 0.75rem 0;
+      padding: 0.5rem 0;
       text-align: center;
     }
 
     nav a {
-      color: #ffffff;
-      margin: 0 1.2rem;
+      color: white;
+      margin: 0 1rem;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: bold;
       font-size: 1rem;
-      transition: color 0.3s;
     }
 
     nav a:hover {
-      color: #aad4ff;
+      text-decoration: underline;
     }
 
     main {
-      max-width: 1100px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
+      max-width: 1000px;
+      margin: 1rem auto;
+      padding: 0 1rem;
     }
 
     h2 {
       color: #004080;
       text-align: center;
+      margin-bottom: 1.5rem;
       font-size: 2rem;
-      margin-bottom: 2rem;
     }
 
     .class-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
     }
 
     .class-card {
       background-color: white;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 1.2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       text-align: center;
-      font-weight: 700;
-      font-size: 1.1rem;
+      cursor: pointer;
       color: #004080;
+      font-weight: bold;
+      font-size: 1.1rem;
       text-decoration: none;
       transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
     }
 
     .class-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-      background-color: #eaf4ff;
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      background-color: #eaf3ff;
+      text-decoration: none;
     }
 
     .back-button {
       display: inline-block;
-      margin-top: 2.5rem;
-      padding: 10px 22px;
+      margin-top: 20px;
+      padding: 10px 20px;
       background-color: #004080;
       color: white;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: 700;
+      border-radius: 5px;
+      font-weight: bold;
       transition: background-color 0.3s;
     }
 
     .back-button:hover {
-      background-color: #002a5c;
+      background-color: #003366;
     }
 
     footer p {
       margin: 0;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
     @media (max-width: 500px) {
@@ -114,23 +110,23 @@
 <body>
 
   <header>
-    <h1>Shree Gyan Jyoti Secondary School</h1>
-    <p>नेपाली माध्यम कक्षा</p>
+    <h1>श्री ज्ञान ज्योति माध्यमिक विद्यालय</h1>
+    <p>नेपाली माध्यम शैक्षिक स्तर</p>
   </header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="announcement.html">News</a>
-    <a href="achievements.html">Achievements</a>
-    <a href="academics.html">English Stream</a>
-    <a href="nepaliacademics.html">Nepali Stream</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html">गृहपृष्ठ</a>
+    <a href="announcement.html">समाचार</a>
+    <a href="achievements.html">उपलब्धिहरू</a>
+    <a href="academics.html">अंग्रेजी माध्यम</a>
+    <a href="nepaliacademics.html">नेपाली माध्यम</a>
+    <a href="contact.html">सम्पर्क</a>
   </nav>
 
   <main>
-    <h2>📗 नेपाली माध्यम (ईसीडी देखि कक्षा १० सम्म)</h2>
+    <h2>📘 नेपाली माध्यम कक्षा (ECD देखि कक्षा १० सम्म)</h2>
     <div class="class-grid">
-      <a href="nepali-ecd.html" class="class-card">👶 इ.सी.डी</a>
+      <a href="nepali-ecd.html" class="class-card">👶 ई.सी.डी</a>
       <a href="nepali-class1.html" class="class-card">📘 कक्षा १</a>
       <a href="nepali-class2.html" class="class-card">📘 कक्षा २</a>
       <a href="nepali-class3.html" class="class-card">📘 कक्षा ३</a>
@@ -143,9 +139,7 @@
       <a href="nepali-class10.html" class="class-card">📙 कक्षा १०</a>
     </div>
 
-    <div style="text-align:center;">
-      <a class="back-button" href="index.html">← गृहपृष्ठमा फर्कनुहोस्</a>
-    </div>
+    <a href="index.html" class="back-button">← गृहपृष्ठमा फर्कनुहोस्</a>
   </main>
 
   <footer>
