@@ -30,13 +30,26 @@
     nav {
       background-color: #003366;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
       padding: 1rem;
-      gap: 1rem;
     }
 
-    nav a {
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-links a {
       color: white;
       font-weight: 600;
       text-decoration: none;
@@ -45,7 +58,7 @@
       transition: background 0.3s;
     }
 
-    nav a:hover {
+    .nav-links a:hover {
       background-color: #0059b3;
     }
 
@@ -110,9 +123,28 @@
     }
 
     @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
+      .menu-toggle {
+        display: block;
+        margin-bottom: 1rem;
+        text-align: center;
       }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 0.75rem;
+      }
+
       .lang-select {
         position: static;
         margin: 1rem auto;
@@ -123,40 +155,106 @@
 </head>
 <body>
 
+  <div class="lang-select">
+    <select onchange="changeLanguage(this)">
+      <option value="en">English</option>
+      <option value="np" selected>नेपाली</option>
+    </select>
+  </div>
+
+  <script>
+    function changeLanguage(select) {
+      const lang = select.value;
+      window.location.href = lang === "np" ? "nepaliindex.html" : "index.html";
+    }
+
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+  </script>
+
   <header>
     <h1>श्री ज्ञान ज्योति माध्यमिक विद्यालय</h1>
-    <p>शैक्षिक कक्षाहरू</p>
+    <p>अजिरकोट-३, लप्सीबोट, गोरखा</p>
   </header>
 
   <nav>
-    <a href="nepaliindex.html">गृह</a>
-    <a href="nepaliacannouncement.html">समाचार</a>
-    <a href="#faculty">शिक्षकहरू</a>
-    <a href="nepaliachivements.html">उपलब्धिहरू</a>
-    <a href="nepalicontact.html">सम्पर्क</a>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="announcement.html">समाचार</a>
+      <a href="academics.html">शैक्षिक कार्यक्रम</a>
+      <a href="#faculty">शिक्षकहरू</a>
+      <a href="achivements.html">उपलब्धिहरू</a>
+      <a href="contact.html">सम्पर्क</a>
+    </div>
   </nav>
 
   <main>
-    <h2>📘 शैक्षिक स्तर (ईसीडी देखि कक्षा १२ सम्म)</h2>
-    <div class="class-grid">
-      <a href="ecd.html" class="class-card">👶 ईसीडी</a>
-      <a href="class1.html" class="class-card">📘 कक्षा १</a>
-      <a href="class2.html" class="class-card">📘 कक्षा २</a>
-      <a href="class3.html" class="class-card">📘 कक्षा ३</a>
-      <a href="class4.html" class="class-card">📘 कक्षा ४</a>
-      <a href="class5.html" class="class-card">📘 कक्षा ५</a>
-      <a href="class6.html" class="class-card">📗 कक्षा ६</a>
-      <a href="class7.html" class="class-card">📗 कक्षा ७</a>
-      <a href="class8.html" class="class-card">📗 कक्षा ८</a>
-      <a href="class9.html" class="class-card">📙 कक्षा ९</a>
-      <a href="class10.html" class="class-card">📙 कक्षा १०</a>
-      <a href="class11.html" class="class-card">📕 कक्षा ११</a>
-      <a href="class12.html" class="class-card">📕 कक्षा १२</a>
-    </div>
+    <section id="news">
+      <h2>📢 सूचना तथा घोषणा</h2>
+      <p>गर्मी बिदा: <strong>असार ८ - साउन १४</strong></p>
+      <p>विद्यालयको अन्तिम दिन: <strong>असार ६</strong></p>
+      <p>कक्षा सुरु हुने: <strong>साउन १५</strong></p>
+      <a class="button-link" href="announcement.html">सबै सूचना हेर्नुहोस्</a>
+    </section>
+
+    <section id="academics">
+      <h2>📚 शैक्षिक कार्यक्रम</h2>
+      <p>नर्सरीदेखि कक्षा १२ सम्म, विज्ञान र व्यवस्थापन संकायमा +२ सहित।</p>
+      <a class="button-link" href="academics.html">हाम्रा शैक्षिक कार्यक्रम हेर्नुहोस्</a>
+    </section>
+
+    <section id="faculty">
+      <h2>👩‍🏫 शिक्षकहरू</h2>
+      <ul>
+        <li><strong>प्राचार्य:</strong> विष्णु दत्त अधिकारी</li>
+        <li><strong>उपप्राचार्य:</strong> इन्द्र बहादुर गुरुङ</li>
+        <li>पर्शुराम अधिकारी</li>
+        <li>बाबुराम अधिकारी</li>
+        <li>हरिशरण दवाडी</li>
+        <li>टुकनाथ अधिकारी</li>
+        <li>बिमला ढकाल</li>
+        <li>ऋषिराम ढुंगाना</li>
+        <li>शृष्टि नेपाल</li>
+        <li>सरस्वती अधिकारी</li>
+        <li>कल्पना श्रेष्ठ</li>
+        <li>रञ्जु लम्साल</li>
+        <li>बाबुराम देवकोटा</li>
+        <li>राजेन्द्र अधिकारी</li>
+        <li>सरोज अधिकारी</li>
+        <li>दिलीप धिताल</li>
+        <li>अनुषा धिताल</li>
+        <li>प्रेमचन्द्र अधिकारी</li>
+        <li>निर्मला न्यौपाने</li>
+        <li><strong>लेखापाल:</strong> टुकनाथ घिमिरे</li>
+        <li><strong>सहयोगी:</strong> रामबहादुर भुजेल</li>
+        <li><strong>सहयोगी:</strong> प्रेम माया धिताल</li>
+        <li><strong>सहयोगी:</strong> लुमनाथ धिताल</li>
+      </ul>
+    </section>
+
+    <section id="achievements">
+      <h2>🏆 उपलब्धिहरू</h2>
+      <ul>
+        <li>एसईई 2080 मा गाउँपालिकास्तरीय प्रथम</li>
+        <li>अन्तरविद्यालय विज्ञान प्रदर्शनी 2079 मा प्रथम स्थान</li>
+        <li>गोरखा जिल्ला उत्कृष्ट विद्यालय पुरस्कार - 2078</li>
+        <li>राष्ट्रपति रनिङ शिल्ड - 2080</li>
+      </ul>
+      <a class="button-link" href="achivements.html">सबै उपलब्धिहरू हेर्नुहोस्</a>
+    </section>
+
+    <section id="contact">
+      <h2>📞 सम्पर्क</h2>
+      <p><strong>ठेगाना:</strong> अजिरकोट-३, लप्सीबोट, गोरखा</p>
+      <p><strong>फोन:</strong> +९७७-९८५६०७१६२३</p>
+      <p><strong>इमेल:</strong> <a href="mailto:gyanjyotiss2016@gmail.com">gyanjyotiss2016@gmail.com</a></p>
+      <a class="button-link" href="contact.html">सबै सम्पर्क हेर्नुहोस्</a>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 श्री ज्ञान ज्योति माध्यमिक विद्यालय। सम्पूर्ण अधिकार सुरक्षित।</p>
+    <p>&copy; २०२५ श्री ज्ञान ज्योति माध्यमिक विद्यालय। सबै अधिकार सुरक्षित।</p>
   </footer>
 
 </body>
