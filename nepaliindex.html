@@ -30,13 +30,26 @@
     nav {
       background-color: #003366;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
       padding: 1rem;
-      gap: 1rem;
     }
 
-    nav a {
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-links a {
       color: white;
       font-weight: 600;
       text-decoration: none;
@@ -45,7 +58,7 @@
       transition: background 0.3s;
     }
 
-    nav a:hover {
+    .nav-links a:hover {
       background-color: #0059b3;
     }
 
@@ -110,9 +123,28 @@
     }
 
     @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
+      .menu-toggle {
+        display: block;
+        margin-bottom: 1rem;
+        text-align: center;
       }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 0.75rem;
+      }
+
       .lang-select {
         position: static;
         margin: 1rem auto;
@@ -135,6 +167,10 @@
       const lang = select.value;
       window.location.href = lang === "np" ? "nepaliindex.html" : "index.html";
     }
+
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
   </script>
 
   <header>
@@ -143,11 +179,14 @@
   </header>
 
   <nav>
-    <a href="nepaliannouncement.html">समाचार</a>
-    <a href="nepaliacademics.html">शैक्षिक कार्यक्रम</a>
-    <a href="#faculty">शिक्षकहरू</a>
-    <a href="nepaliachivements.html">उपलब्धिहरू</a>
-    <a href="nepalicontact.html">सम्पर्क</a>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="announcement.html">समाचार</a>
+      <a href="academics.html">शैक्षिक कार्यक्रम</a>
+      <a href="#faculty">शिक्षकहरू</a>
+      <a href="achivements.html">उपलब्धिहरू</a>
+      <a href="contact.html">सम्पर्क</a>
+    </div>
   </nav>
 
   <main>
