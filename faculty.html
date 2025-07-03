@@ -7,24 +7,82 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Nunito', sans-serif;
       background-color: #f0f2f5;
     }
 
-    header {
+    /* NAVBAR */
+    .navbar {
       background-color: #004b8d;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .navbar .logo {
       color: white;
-      padding: 20px 0;
-      text-align: center;
+      font-size: 20px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 32px;
+    .navbar .logo img {
+      height: 40px;
+      margin-right: 10px;
     }
 
+    .navbar .menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar .menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .navbar .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .navbar .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #004b8d;
+        padding: 10px 0;
+      }
+
+      .navbar .menu.active {
+        display: flex;
+      }
+
+      .navbar .menu a {
+        padding: 10px;
+        text-align: center;
+      }
+
+      .navbar .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* TEACHER SECTION */
     .team-section {
       padding: 50px 20px;
       text-align: center;
@@ -98,10 +156,23 @@
 </head>
 <body>
 
-  <header>
-    <h1>Our Faculty</h1>
-  </header>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="School Logo">
+      Shree Gyan Jyoti
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="menu" id="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="faculty.html">Faculty</a>
+      <a href="academics.html">Academics</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
 
+  <!-- Faculty Section -->
   <section class="team-section">
     <h2 class="section-title">Meet Our Dedicated Teachers</h2>
     <div class="team-grid">
@@ -154,6 +225,13 @@
   <footer>
     <p>&copy; 2025 Shree Gyan Jyoti Secondary School. All rights reserved.</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('active');
+    }
+  </script>
 
 </body>
 </html>
