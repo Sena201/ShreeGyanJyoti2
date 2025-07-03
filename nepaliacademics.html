@@ -2,259 +2,155 @@
 <html lang="ne">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>श्री ज्ञान ज्योति माध्यमिक विद्यालय</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>शैक्षिक कार्यक्रम | श्री ज्ञान ज्योति माध्यमिक विद्यालय</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
+      font-family: 'Nunito', sans-serif;
+      margin: 0;
+      background-color: #f9fafc;
       line-height: 1.6;
+      color: #333;
     }
 
     header, footer {
-      background: linear-gradient(90deg, #004080, #0059b3);
+      background-color: #004080;
       color: white;
+      padding: 1.5rem 0;
       text-align: center;
-      padding: 2rem 1rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     nav {
       background-color: #003366;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem;
+      padding: 0.75rem 0;
+      text-align: center;
     }
 
-    .menu-toggle {
-      display: none;
-      font-size: 2rem;
-      color: white;
-      cursor: pointer;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .nav-links a {
-      color: white;
-      font-weight: 600;
+    nav a {
+      color: #ffffff;
+      margin: 0 1.2rem;
       text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      transition: background 0.3s;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: color 0.3s;
     }
 
-    .nav-links a:hover {
-      background-color: #0059b3;
-    }
-
-    .lang-select {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-
-    .lang-select select {
-      padding: 5px;
-      border-radius: 5px;
-      border: none;
+    nav a:hover {
+      color: #aad4ff;
     }
 
     main {
       max-width: 1100px;
-      margin: auto;
-      padding: 2rem 1rem;
-    }
-
-    section {
-      background: white;
-      margin-bottom: 2rem;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
-    }
-
-    section:hover {
-      transform: translateY(-5px);
+      margin: 2rem auto;
+      padding: 0 1.5rem;
     }
 
     h2 {
       color: #004080;
-      margin-bottom: 1rem;
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
     }
 
-    ul {
-      list-style: inside square;
-      margin-left: 1rem;
+    .class-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
     }
 
-    .button-link {
+    .class-card {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #004080;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    }
+
+    .class-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      background-color: #eaf4ff;
+    }
+
+    .back-button {
       display: inline-block;
-      margin-top: 1rem;
-      padding: 10px 20px;
-      background: #004080;
+      margin-top: 2.5rem;
+      padding: 10px 22px;
+      background-color: #004080;
       color: white;
       text-decoration: none;
       border-radius: 6px;
-      transition: background 0.3s;
+      font-weight: 700;
+      transition: background-color 0.3s;
     }
 
-    .button-link:hover {
-      background: #00264d;
+    .back-button:hover {
+      background-color: #002a5c;
     }
 
     footer p {
-      font-size: 0.9rem;
+      margin: 0;
+      font-size: 0.95rem;
     }
 
-    @media (max-width: 768px) {
-      .menu-toggle {
+    @media (max-width: 500px) {
+      nav a {
         display: block;
-        margin-bottom: 1rem;
-        text-align: center;
-      }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-      }
-
-      .nav-links.show {
-        display: flex;
-      }
-
-      .nav-links a {
-        width: 100%;
-        padding: 0.75rem;
-      }
-
-      .lang-select {
-        position: static;
-        margin: 1rem auto;
-        text-align: center;
+        margin: 0.5rem 0;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="lang-select">
-    <select onchange="changeLanguage(this)">
-      <option value="en">English</option>
-      <option value="np" selected>नेपाली</option>
-    </select>
-  </div>
-
-  <script>
-    function changeLanguage(select) {
-      const lang = select.value;
-      window.location.href = lang === "np" ? "nepaliindex.html" : "index.html";
-    }
-
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("show");
-    }
-  </script>
-
   <header>
     <h1>श्री ज्ञान ज्योति माध्यमिक विद्यालय</h1>
-    <p>अजिरकोट-३, लप्सीबोट, गोरखा</p>
+    <p>शैक्षिक तहहरूको विवरण</p>
   </header>
 
   <nav>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <div class="nav-links" id="navLinks">
-      <a href="announcement.html">समाचार</a>
-      <a href="academics.html">शैक्षिक कार्यक्रम</a>
-      <a href="#faculty">शिक्षकहरू</a>
-      <a href="achivements.html">उपलब्धिहरू</a>
-      <a href="contact.html">सम्पर्क</a>
-    </div>
+    <a href="index.html">गृहपृष्ठ</a>
+    <a href="announcement.html">समाचार</a>
+    <a href="achievements.html">उपलब्धिहरू</a>
+    <a href="academics.html">शिक्षा</a>
+    <a href="contact.html">सम्पर्क</a>
   </nav>
 
   <main>
-    <section id="news">
-      <h2>📢 सूचना तथा घोषणा</h2>
-      <p>गर्मी बिदा: <strong>असार ८ - साउन १४</strong></p>
-      <p>विद्यालयको अन्तिम दिन: <strong>असार ६</strong></p>
-      <p>कक्षा सुरु हुने: <strong>साउन १५</strong></p>
-      <a class="button-link" href="announcement.html">सबै सूचना हेर्नुहोस्</a>
-    </section>
+    <h2>📘 हाम्रो शैक्षिक कार्यक्रमहरू (ईसीडी देखि कक्षा १२ सम्म)</h2>
+    <div class="class-grid">
+      <a href="ecd.html" class="class-card">👶 इ.सी.डी.</a>
+      <a href="class1.html" class="class-card">📘 कक्षा १</a>
+      <a href="class2.html" class="class-card">📘 कक्षा २</a>
+      <a href="class3.html" class="class-card">📘 कक्षा ३</a>
+      <a href="class4.html" class="class-card">📘 कक्षा ४</a>
+      <a href="class5.html" class="class-card">📘 कक्षा ५</a>
+      <a href="class6.html" class="class-card">📗 कक्षा ६</a>
+      <a href="class7.html" class="class-card">📗 कक्षा ७</a>
+      <a href="class8.html" class="class-card">📗 कक्षा ८</a>
+      <a href="class9.html" class="class-card">📙 कक्षा ९</a>
+      <a href="class10.html" class="class-card">📙 कक्षा १०</a>
+      <a href="class11.html" class="class-card">📕 कक्षा ११</a>
+      <a href="class12.html" class="class-card">📕 कक्षा १२</a>
+    </div>
 
-    <section id="academics">
-      <h2>📚 शैक्षिक कार्यक्रम</h2>
-      <p>नर्सरीदेखि कक्षा १२ सम्म, विज्ञान र व्यवस्थापन संकायमा +२ सहित।</p>
-      <a class="button-link" href="academics.html">हाम्रा शैक्षिक कार्यक्रम हेर्नुहोस्</a>
-    </section>
-
-    <section id="faculty">
-      <h2>👩‍🏫 शिक्षकहरू</h2>
-      <ul>
-        <li><strong>प्राचार्य:</strong> विष्णु दत्त अधिकारी</li>
-        <li><strong>उपप्राचार्य:</strong> इन्द्र बहादुर गुरुङ</li>
-        <li>पर्शुराम अधिकारी</li>
-        <li>बाबुराम अधिकारी</li>
-        <li>हरिशरण दवाडी</li>
-        <li>टुकनाथ अधिकारी</li>
-        <li>बिमला ढकाल</li>
-        <li>ऋषिराम ढुंगाना</li>
-        <li>शृष्टि नेपाल</li>
-        <li>सरस्वती अधिकारी</li>
-        <li>कल्पना श्रेष्ठ</li>
-        <li>रञ्जु लम्साल</li>
-        <li>बाबुराम देवकोटा</li>
-        <li>राजेन्द्र अधिकारी</li>
-        <li>सरोज अधिकारी</li>
-        <li>दिलीप धिताल</li>
-        <li>अनुषा धिताल</li>
-        <li>प्रेमचन्द्र अधिकारी</li>
-        <li>निर्मला न्यौपाने</li>
-        <li><strong>लेखापाल:</strong> टुकनाथ घिमिरे</li>
-        <li><strong>सहयोगी:</strong> रामबहादुर भुजेल</li>
-        <li><strong>सहयोगी:</strong> प्रेम माया धिताल</li>
-        <li><strong>सहयोगी:</strong> लुमनाथ धिताल</li>
-      </ul>
-    </section>
-
-    <section id="achievements">
-      <h2>🏆 उपलब्धिहरू</h2>
-      <ul>
-        <li>एसईई 2080 मा गाउँपालिकास्तरीय प्रथम</li>
-        <li>अन्तरविद्यालय विज्ञान प्रदर्शनी 2079 मा प्रथम स्थान</li>
-        <li>गोरखा जिल्ला उत्कृष्ट विद्यालय पुरस्कार - 2078</li>
-        <li>राष्ट्रपति रनिङ शिल्ड - 2080</li>
-      </ul>
-      <a class="button-link" href="achivements.html">सबै उपलब्धिहरू हेर्नुहोस्</a>
-    </section>
-
-    <section id="contact">
-      <h2>📞 सम्पर्क</h2>
-      <p><strong>ठेगाना:</strong> अजिरकोट-३, लप्सीबोट, गोरखा</p>
-      <p><strong>फोन:</strong> +९७७-९८५६०७१६२३</p>
-      <p><strong>इमेल:</strong> <a href="mailto:gyanjyotiss2016@gmail.com">gyanjyotiss2016@gmail.com</a></p>
-      <a class="button-link" href="contact.html">सबै सम्पर्क हेर्नुहोस्</a>
-    </section>
+    <div style="text-align:center;">
+      <a class="back-button" href="index.html">← गृहपृष्ठमा फर्कनुहोस्</a>
+    </div>
   </main>
 
   <footer>
-    <p>&copy; २०२५ श्री ज्ञान ज्योति माध्यमिक विद्यालय। सबै अधिकार सुरक्षित।</p>
+    <p>&copy; २०२५ श्री ज्ञान ज्योति माध्यमिक विद्यालय। सम्पूर्ण अधिकार सुरक्षित।</p>
   </footer>
 
 </body>
